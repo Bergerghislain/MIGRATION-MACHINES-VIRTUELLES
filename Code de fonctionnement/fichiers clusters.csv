@@ -1,0 +1,8 @@
+// fichier d'association Machines - Cluster  sous formes de CSV ( ceci est juste un exemple uitilise pour travailler)
+
+mettre ce dernier sous l'emplacement : # Fichier : /etc/node-clusters.csv
+
+# Format : hostname,cluster
+econome-5,dahu // ceci ne sont que des exemples tests 
+econome-9,abacus5 // ceci ne sont que des exemples tests 
+
