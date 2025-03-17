@@ -17,4 +17,4 @@ Aussi certains fichiers avec dans leur noms "folks" sont des approches que j'ai 
 
 J'ai pris enormement de plaisir a travailler dessus j'espere que vous en prendrez autant lors de vos lectures.( j'ai suppose que vous l'avez lu plusieurs fois:) )
 
-NB: SUIVRE EXACTEMENT CHAQUE ETAPE DECRITE A LA LETTRE !!!
+
