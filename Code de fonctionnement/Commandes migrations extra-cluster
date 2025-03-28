@@ -1,0 +1,43 @@
+SCRIPT A SUIVRE POUR LA MIGRATION EXTRA-CLUSTER
+
+/***oarsub -t deploy \
+  -l "{network_address='dahu-5.grenoble.grid5000.fr'}/nodes=1 + {network_address='dahu-7.grenoble.grid5000.fr'}/nodes=1 + {network_address='drac-3.grenoble.grid5000.fr'}/nodes=1" \
+  -l walltime=4:00:00 -t exotic "sleep 4h"***/
+  
+ On veut que ces derniers, soient situes dans le meme VLAN:pour cela on utilise OAR et Kavlan pour reserver la machine :
+ Explications :
+
+Réservation multi-clusters :
+La syntaxe avec le signe « + » permet de combiner plusieurs réservations issues de nœuds ayant des adresses réseau différentes (par exemple, 'dahu-5', 'dahu-7' et 'drac-3').
+
+Attribution KaVLAN :
+En ajoutant type='kavlan-local' dans chaque contrainte, vous indiquez que ces nœuds doivent être configurés dans un VLAN dédié via le mécanisme KaVLAN.
+L'option -p "vlan=1" précise le VLAN à utiliser (ici VLAN 1, correspondant aux ressources de type local sur Grid'5000).
+
+Options supplémentaires :
+
+-l walltime=4:00:00 définit la durée de réservation à 4 heures.
+-t exotic autorise la réservation de nœuds provenant de clusters différents.
+La commande "sleep 4h" permet de garder les nœuds occupés pendant toute la durée de la réservation.
+Cette approche garantit que, même si les nœuds proviennent de clusters différents, ils seront placés dans le même domaine de diffusion (même VLAN), ce qui est indispensable pour des applications telles que la migration de VMs via Xen/OpenStack.
+
+Pour plus d’informations, consultez la documentation KaVLAN sur Grid'5000 
+GRID5000.FR
+ et la section sur la réservation avancée via OAR dans le wiki Grid'5000.
+ Et la syntaxe est la suivante :
+ 
+ oarsub -t deploy \
+  -l "{network_address='dahu-5.grenoble.grid5000.fr', type='kavlan-local'}/nodes=1 + {network_address='dahu-7.grenoble.grid5000.fr', type='kavlan-local'}/nodes=1 + {network_address='drac-3.grenoble.grid5000.fr', type='kavlan-local'}/nodes=1" \
+  -l walltime=4:00:00 \
+  -p "vlan=1" \
+  -t exotic "sleep 4h"
+
+Pour se connecter  a l'hote on fait ceci:
+ oarsh dahu-5.grenoble.grid5000.fr// bien evidemment si dahu-5 est le noeud reserve et grenoble le site sur lequel il a ete reserve
+Cette commande vous connectera avec votre nom d'utilisateur Grid5000.
+
+Si on veut passer en mode root on fait ca: sudo su - ( utile quand il faudra lancer openstack, voir fichier dinstallation de ce dernier)
+
+a tout moment la connexion a un job peut etre interrompue pour verifier l'etat d'un job on peut voir cela avec la commande : oarstat -u <votre_nom_utilisateur>
+
+Utilisez la commande oarnodes -l pour obtenir une liste détaillée de vos nœuds, qui inclut souvent des informations sur le matériel (comme le type de NIC et parfois le port ou le switch associé).

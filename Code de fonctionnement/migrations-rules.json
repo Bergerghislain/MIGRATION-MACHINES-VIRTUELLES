@@ -1,0 +1,12 @@
+{
+  "econome": {
+    "ecotype": {
+      "success": true,
+      "conditions": {
+        "network": "routé",
+        "cpu": "match",
+        "xen": "4.16.1"
+      }
+    }
+  }
+}
