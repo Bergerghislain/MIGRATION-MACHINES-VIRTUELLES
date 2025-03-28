@@ -6,10 +6,10 @@ Ceci ne constitue qu'un guide resumant les differentes etapes pour realiser la m
 Pour cela j'ai cree trois repertoires , 
 
 - Les fichiers de code seront situes dans le sous-repertoire " codes de fonctionnement"
-- Les powerpoint temoignant de mon evolution hebdomadaire  et des reflections que j'ai pu avoir seront dans le le sous-repertoire " Documentations"
+- Les powerpoint temoignant de mon evolution hebdomadaire  et des reflections que j'ai pu avoir seront dans le le sous-repertoire " Powerpoint"
 - Et enfin dans un sous-repertoire du nom de  " Documentations" ,socle de la vulgarisation de mon travail j'ai :
 
--J'ai resume dans un fichier word la demarche generale adoptee ainsi que la liste enumeree des fichiers de codes et leurs utilites ( mais cela n'etait vraiment que tres bref)
+-J'ai resume dans un fichier word la demarche generale adoptee ainsi que la liste enumeree des fichiers de codes et leurs utilites ( mais cela n'etait vraiment que tres bref) dans un document Word du nom de " Roadmap final" qui parle un peu de ce qu'il faut faire sur une prise en main eventuel doit etre faite...
 - Ensuite pour faire un zoom plus detaille sur chaque fichier, j'explique dans un fichier word portant le nom du fichier de code apres le "--" pour dire exactement a quoi sert le fichier , en quoi il aide dans notre objectif principal plus haut et surtout , quelle a ete la reflexion mene pour editer et creer ce dernier et eventuellement tout ce qui tourne autour
 -Dans un fichier principal je retracerai l'historique de parcours des fichiers, les commandes principales a execcuter qui joignent tous ses fichiers entre eux ( un peu comme un fil conducteur) ainsi comprendre le travail et le reproduire pourra etre un peu plus aise( a quelques choses pretes:) ) 
 
