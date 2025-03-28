@@ -1,4 +1,5 @@
 from nova.scheduler import filters
+## ce document regarde la compatibilite des versions de Xen installes sur chaque noeud de calul pour bel et bien se rassurer que ces eux la sont bien compatibles.
 
 class XenCompatibilityFilter(filters.BaseHostFilter):
     def host_passes(self, host_state, filter_properties):
@@ -9,3 +10,4 @@ class XenCompatibilityFilter(filters.BaseHostFilter):
             f"/chemin/check_migration.sh {src_cluster} {dest_cluster}", 
             shell=True
         ).decode().startswith("OK")
+     
